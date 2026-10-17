@@ -11,6 +11,8 @@ class Coffeshoppingcart {
 	int quantity;
 	double total;
 	char currency= '₹';
+
+	System.out.println("Welcome to Cafe Shop");
 	
 	System.out.print("What item Would you like to buy: ");
 	item = ic.nextLine();
