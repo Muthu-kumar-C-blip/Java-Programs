@@ -12,6 +12,7 @@ class simplecalculation{
 		double num2;
 		char operators;
 		double result = 0;
+		boolean validOperation = true;
 		
 		System.out.print("Enter the First Number: ");
 		num1 = sc.nextDouble();
@@ -26,11 +27,25 @@ class simplecalculation{
 		case '+' -> result = num1 + num2;
 		case '-' -> result = num1 - num2;
 		case '*' -> result = num1 * num2;
-		case '/' -> result = num1 / num2;
+		case '/' -> {
+			if(num2 == 0) {
+				System.out.println("Cannot Divide by Zero!");
+				validOperation = false;
+			}
+			else {
+				result = num1 / num2;
+			}
+		}
 		case '^' -> result = Math.pow(num1, num2);
+		default -> {
+			System.out.println("Enter a vaild Operator!");
+			validOperation = false;
+		}
 		}
 		
-		System.out.println("The Result is :"+result);
+		if(validOperation) {
+			System.out.println("The Result is :"+result);
+		}
 		
 		sc.close();
 		
